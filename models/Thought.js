@@ -20,7 +20,7 @@ const ThoughtSchema = new Schema(
     }
 );
 
-UserSchema.virtual('reactionCount').get(function() {
+ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.reduce(
         (total, reaction) => total + reaction.length + 1,
         0
